@@ -8,7 +8,7 @@ export default function TopArtists() {
   );
 
   if (isFetching) {
-    return <Loader title="Loading artists..." />;
+    return <Loader title="Loading Top Artists..." />;
   }
 
   return (

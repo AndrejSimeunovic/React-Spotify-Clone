@@ -8,7 +8,7 @@ export default function TopCharts() {
   );
 
   if (isFetching) {
-    return <Loader title="Loading Top Charts" />;
+    return <Loader title="Loading Top Charts..." />;
   }
 
   return (

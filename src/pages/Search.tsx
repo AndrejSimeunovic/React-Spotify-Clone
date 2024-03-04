@@ -12,7 +12,7 @@ export default function Search() {
     error,
   } = useGetSearchQuery(searchTerm || "");
 
-  if (isFetching) return <Loader title="Loading Top Charts" />;
+  if (isFetching) return <Loader title="Loading Top Charts..." />;
 
   if (error || !songsData || Object.keys(songsData).length === 0)
     return <Error />;
