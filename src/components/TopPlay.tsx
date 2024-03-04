@@ -8,6 +8,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { FreeMode } from "swiper/modules";
 import { Link } from "react-router-dom";
+import { useEffect, useRef } from "react";
 
 type TopChartCardProps = {
   track: Track;
@@ -69,6 +70,11 @@ export default function TopPlay() {
   const dispatch = useAppDispatch();
   const { data } = useGetAllSongsByGenreQuery("genre-global-chart-1");
   const topCharts = data?.tracks.slice(0, 5);
+  const divRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    divRef.current?.scrollIntoView({ behavior: "smooth" });
+  });
 
   function handlePlay(track: Track, index: number, trackList: Track[]) {
     dispatch(getCurrentTrack({ track, index, trackList }));
@@ -79,7 +85,7 @@ export default function TopPlay() {
     dispatch(playPause(false));
   }
   return (
-    <div className="flex flex-col gap-3 w-full overflow-auto">
+    <div ref={divRef} className="flex flex-col gap-3 w-full overflow-auto">
       <div className="flex flex-col">
         <div className="flex justify-between mb-3 items-center">
           <span className="text-2xl bold text-white">Top charts</span>
