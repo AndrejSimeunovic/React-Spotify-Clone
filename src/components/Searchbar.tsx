@@ -21,16 +21,19 @@ export default function Searchbar() {
       autoComplete="off"
       className="flex items-center focus-within:text-gray-600"
     >
-      <Search color="#4a4545" size={15} />
+      <Search color="#4a4545" size={15} className="hidden sm:block" />
       <input
         ref={searchTermRef}
         autoComplete="off"
-        className="w-48 rounded pl-2 bg-transparent text-slate-400 outline-none text-sm"
+        className="w-28 sm:w-48 rounded pl-2 bg-transparent text-slate-400 outline-none text-sm"
         type="search"
         placeholder="Search"
         onSubmit={handleSubmit}
         onTouchStart={handleSubmit}
       />
+       <button type="submit" className="ml-1 sm:hidden">
+       <Search color="#4a4545" size={20} />
+      </button>
     </form>
   );
 }
