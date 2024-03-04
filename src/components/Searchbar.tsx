@@ -29,6 +29,7 @@ export default function Searchbar() {
         type="search"
         placeholder="Search"
         onSubmit={handleSubmit}
+        onTouchStart={handleSubmit}
       />
     </form>
   );
