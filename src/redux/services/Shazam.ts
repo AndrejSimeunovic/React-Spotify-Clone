@@ -4,6 +4,7 @@ import type {
   ChartList,
   SearchTrack,
   SongDetails,
+  TopSongs,
   Tracks,
 } from "../../types";
 
@@ -35,7 +36,7 @@ export const shazamApi = createApi({
     getArtistDetails: builder.query<ArtistDetails, string>({
       query: (artistId) => `artists/get-details?id=${artistId}`,
     }),
-    getTopSongs: builder.query<ArtistDetails, string>({
+    getTopSongs: builder.query<TopSongs, string>({
       query: (artistId) => `artists/get-top-songs?id=${artistId}`,
     }),
     getSearch: builder.query<SearchTrack, string>({

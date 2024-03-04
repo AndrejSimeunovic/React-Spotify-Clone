@@ -1,7 +1,7 @@
 import { ArtistDetails } from "../types";
 
 type DetailsHeaderProps = {
-  artistDetails: ArtistDetails;
+  artistDetails?: ArtistDetails;
 };
 
 export default function DetailsHeader({ artistDetails }: DetailsHeaderProps) {

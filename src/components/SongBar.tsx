@@ -1,19 +1,11 @@
 import { TopSong } from "../types";
-import PlayPause from "./PlayPause";
 
 type SongBarProp = {
   song: TopSong;
   index: number;
-  handlePlay: () => void;
-  handlePause: () => void;
 };
 
-export default function SongBar({
-  song,
-  index,
-  handlePlay,
-  handlePause,
-}: SongBarProp) {
+export default function SongBar({ song, index }: SongBarProp) {
   return (
     <div className="flex justify-between items-center hover:bg-[#4c426e] rounded-lg">
       <div className="flex items-center gap-2 mb-2 py-2 px-4">

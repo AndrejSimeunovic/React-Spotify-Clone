@@ -173,7 +173,7 @@ export interface Attributes {
   artwork: Artwork;
   audioLocale: string;
   audioTraits: string[];
-  composerName: string;
+  composerName?: string;
   discNumber: number;
   durationInMillis: number;
   genreNames: string[];
@@ -267,11 +267,7 @@ export interface Albums {
 
 export interface AlbumsDatum {
   id: string;
-  type: Type;
-}
-
-export enum Type {
-  Albums = "albums",
+  type: string;
 }
 
 export interface TopSongs {
@@ -286,10 +282,10 @@ export interface TopSong {
 
 export interface Attributes {
   albumName: string;
-  artistName: ArtistName;
+  artistName: string;
   artwork: Artwork;
-  audioLocale: AudioLocale;
-  audioTraits: AudioTrait[];
+  audioLocale: string;
+  audioTraits: string[];
   composerName?: string;
   contentRating?: string;
   discNumber: number;
@@ -310,12 +306,6 @@ export interface Attributes {
   url: string;
 }
 
-export enum ArtistName {
-  ILLENIUMTeddySwims = "ILLENIUM & Teddy Swims",
-  MeghanTrainor = "Meghan Trainor",
-  TeddySwims = "Teddy Swims",
-}
-
 export interface Artwork {
   bgColor: string;
   hasP3: boolean;
@@ -328,24 +318,9 @@ export interface Artwork {
   width: number;
 }
 
-export enum AudioLocale {
-  EnUS = "en-US",
-}
-
-export enum AudioTrait {
-  Atmos = "atmos",
-  Lossless = "lossless",
-  LossyStereo = "lossy-stereo",
-  Spatial = "spatial",
-}
-
 export interface PlayParams {
   id: string;
-  kind: Kind;
-}
-
-export enum Kind {
-  Song = "song",
+  kind: string;
 }
 
 export interface Preview {
