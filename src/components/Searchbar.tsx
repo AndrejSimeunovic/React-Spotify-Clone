@@ -1,30 +1,34 @@
 import { Search } from "lucide-react";
-import { useRef } from "react";
-import { KeyboardEvent } from "react";
+import { FormEvent, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function Searchbar() {
   const navigate = useNavigate();
   const searchTermRef = useRef<HTMLInputElement>(null);
 
-  function handleKeyPress(event: KeyboardEvent<HTMLInputElement>) {
+  function handleSubmit(event: FormEvent) {
+    event.preventDefault();
     const term = searchTermRef.current?.value;
-    if (event.key === "Enter" && term) {
+    if (term) {
       navigate(`search/${term}`);
       searchTermRef.current && (searchTermRef.current.value = "");
     }
   }
 
   return (
-    <div className="flex items-center">
+    <form
+      onSubmit={handleSubmit}
+      autoComplete="off"
+      className="flex items-center focus-within:text-gray-600"
+    >
       <Search color="#4a4545" size={15} />
       <input
         ref={searchTermRef}
         className="w-48 rounded pl-2 bg-transparent text-slate-400 outline-none text-sm"
         type="search"
         placeholder="Search"
-        onKeyDown={handleKeyPress}
+        onSubmit={handleSubmit}
       />
-    </div>
+    </form>
   );
 }

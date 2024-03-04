@@ -25,8 +25,8 @@ function App() {
         <div className="flex flex-1 flex-col h-screen bg-gradient-to-br from-black to-[#121286] p-4 gap-3">
           <Searchbar />
 
-          <div className="flex xl:flex-row flex-col-reverse overflow-auto gap-5">
-            <div className="flex-1 w-full xl:overflow-auto">
+          <div className="flex xl:flex-row flex-col-reverse overflow-auto  hide-scrollbar gap-5">
+            <div className="flex-1 w-full xl:overflow-auto  hide-scrollbar pb-40">
               <Routes>
                 <Route path="/" element={<Discover />} />
                 <Route path="/around-you" element={<AroundYou />} />
@@ -40,7 +40,7 @@ function App() {
                 <Route path="/search/:searchTerm" element={<Search />} />
               </Routes>
             </div>
-            <div className="xl:max-w-md w-full xl:overflow-auto">
+            <div className="xl:max-w-md w-full xl:overflow-auto hide-scrollbar lg:pb-24 pb-5">
               <TopPlay />
             </div>
           </div>

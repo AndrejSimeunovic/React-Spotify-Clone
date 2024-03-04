@@ -44,7 +44,7 @@ export default function SongCard({ track, index, trackList }: SongCardProps) {
         />
 
         <div
-          className={`opacity-0 group-hover:opacity-100 cursor-pointer absolute top-[35%] left-[38%] ${
+          className={`opacity-0 group-hover:opacity-100  cursor-pointer absolute inset-0 flex justify-center items-center  ${
             activeSong.key === track.key ? "opacity-100" : ""
           } `}
         >
