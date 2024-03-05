@@ -31,7 +31,7 @@ export default function Controls({
     <div className="flex lg:gap-6 items-center justify-center text-slate-300">
       <BsArrowRepeat
         size={20}
-        className={`cursor-pointer hidden sm:block hover:text-red-500 ${
+        className={`cursor-pointer hidden sm:block ${
           repeat ? "text-red-500" : ""
         }`}
         onClick={toggleRepeat}
@@ -61,7 +61,7 @@ export default function Controls({
       />
       <BsShuffle
         size={20}
-        className={`cursor-pointer hidden sm:block hover:text-red-500 ${
+        className={`cursor-pointer hidden sm:block ${
           shuffle ? "text-red-500" : ""
         }`}
         onClick={toggleShuffle}
