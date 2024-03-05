@@ -72,9 +72,9 @@ export default function TopPlay() {
   const topCharts = data?.tracks.slice(0, 5);
   const divRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    divRef.current?.scrollIntoView({ behavior: "smooth" });
-  });
+  /*useEffect(() => {
+   divRef.current?.scrollIntoView({ behavior: "instant" });
+  });*/
 
   function handlePlay(track: Track, index: number, trackList: Track[]) {
     dispatch(getCurrentTrack({ track, index, trackList }));
