@@ -33,7 +33,7 @@ function TopChartCard({
           alt="image"
           className="rounded h-16 w-16"
         />
-        <div className="flex flex-col">
+        <div className="flex flex-col sm:w-[75%] w-[50%]">
           {/*<Link
             className="font-bold text-white mb-1 truncate"
             to={
